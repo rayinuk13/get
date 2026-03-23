@@ -2,6 +2,7 @@ class Get < Formula
   desc "Dead-simple terminal tool to download YouTube videos and audio"
   homepage "https://github.com/rayinuk13/get"
   url "https://github.com/rayinuk13/get/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "4e61d2676799e012ed238ec14ef1d221c6aba0b28456e2563c892b299dd99b67"
   license "MIT"
 
   depends_on "ffmpeg"

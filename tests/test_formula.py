@@ -17,6 +17,7 @@ class FormulaTests(unittest.TestCase):
         self.assertIn("depends_on \"yt-dlp\"", content)
         self.assertIn("archive/refs/tags/v", content)
         self.assertIn(".tar.gz", content)
+        self.assertIn("sha256", content)
         self.assertIn("assert_match(/get v\\d+\\.\\d+\\.\\d+/", content)
         self.assertIn("test do", content)
 
