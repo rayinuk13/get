@@ -5,8 +5,15 @@ A dead-simple terminal tool to download YouTube videos and audio.
 ## Install
 
 ```bash
-brew tap rayinuk13/get
+brew tap rayinuk13/get https://github.com/rayinuk13/get
 brew install get
+```
+
+## Uninstall
+
+```bash
+brew uninstall get
+brew untap rayinuk13/get
 ```
 
 ## Usage
