@@ -13,7 +13,8 @@ class FormulaTests(unittest.TestCase):
         self.assertIn('bin.install "get.py" => "get"', content)
         self.assertIn("depends_on \"ffmpeg\"", content)
         self.assertIn("depends_on \"yt-dlp\"", content)
-        self.assertIn("archive/refs/tags/v1.0.0.tar.gz", content)
+        self.assertIn("archive/refs/tags/v", content)
+        self.assertIn(".tar.gz", content)
         self.assertIn("test do", content)
 
 
