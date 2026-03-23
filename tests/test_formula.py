@@ -1,4 +1,5 @@
 import unittest
+import re
 from pathlib import Path
 
 
@@ -20,6 +21,11 @@ class FormulaTests(unittest.TestCase):
         self.assertIn("sha256", content)
         self.assertIn(r"assert_match(/get v\d+\.\d+\.\d+/", content)
         self.assertIn("test do", content)
+
+    def test_formula_url_uses_semver_tag(self):
+        content = FORMULA.read_text(encoding="utf-8")
+        match = re.search(r'url\s+"[^"]*/v(\d+\.\d+\.\d+)\.tar\.gz"', content)
+        self.assertIsNotNone(match)
 
 
 if __name__ == "__main__":
