@@ -9,7 +9,7 @@ SCRIPT = REPO_ROOT / "get.py"
 
 
 class GetCliTests(unittest.TestCase):
-    def run_get(self, *args):
+    def run_get_cli(self, *args):
         return subprocess.run(
             [sys.executable, str(SCRIPT), *args],
             capture_output=True,
@@ -18,13 +18,13 @@ class GetCliTests(unittest.TestCase):
         )
 
     def test_help_flag_succeeds(self):
-        result = self.run_get("--help")
+        result = self.run_get_cli("--help")
         self.assertEqual(result.returncode, 0)
         self.assertIn("Usage:", result.stdout)
         self.assertIn("get -mp3 <url>", result.stdout)
 
     def test_unknown_flag_fails(self):
-        result = self.run_get("-nope", "https://example.com")
+        result = self.run_get_cli("-nope", "https://example.com")
         self.assertEqual(result.returncode, 1)
         self.assertIn("[get] unknown flag: -nope", result.stdout)
 
