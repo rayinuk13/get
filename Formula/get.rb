@@ -12,6 +12,6 @@ class Get < Formula
   end
 
   test do
-    assert_match "get v1.0.0", shell_output("#{bin}/get --help")
+    assert_match(/get v\d+\.\d+\.\d+/, shell_output("#{bin}/get --help"))
   end
 end
